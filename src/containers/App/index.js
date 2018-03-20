@@ -6,9 +6,11 @@ import './style.css';
 class AppContainer extends Component {
   render() {
     return (
-      <Container fluid>
-            <Header as='h2'>Senhor do tempo</Header>
-      </Container>
+      <div>
+        <Container fluid>
+          <Header as='h2'>Senhor do tempo</Header>
+        </Container>
+      </div>
   );
   }
 }

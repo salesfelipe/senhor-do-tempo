@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import logo from '../../resources/logo.svg';
-import './App.css';
+import './style.css';
 
-class App extends Component {
+class AppContainer extends Component {
   render() {
     return (
       <div className="App">
@@ -18,4 +18,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default AppContainer;

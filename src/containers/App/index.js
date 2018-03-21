@@ -1,17 +1,12 @@
 import React, { Component } from 'react';
-import { Container, Header } from 'semantic-ui-react';
-//import logo from '../../resources/logo.svg';
-import './style.css';
+import { Card, Grid, Search, Header } from 'semantic-ui-react';
+import MainCard  from '../../components/MainCard';
 
 class AppContainer extends Component {
   render() {
     return (
-      <div>
-        <Container fluid>
-          <Header as='h2'>Senhor do tempo</Header>
-        </Container>
-      </div>
-  );
+      <MainCard />
+    );
   }
 }
 

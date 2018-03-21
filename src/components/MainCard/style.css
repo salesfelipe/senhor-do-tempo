@@ -9,3 +9,11 @@
 .CardHeader {
   margin: 20px;
 }
+
+.CardHeader h2 {
+  color: #00A4AC !important;
+}
+
+.ui.icon.input {
+  width: 100%;
+}

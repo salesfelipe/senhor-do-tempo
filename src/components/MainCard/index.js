@@ -4,6 +4,15 @@ import './style.css';
 
 class MainCard extends Component {
     render() {
+        const 
+        { 
+            onSearch,
+            onSearchSelect,
+            searchLoading,
+            searchValue,
+            searchResults
+        } = this.props;
+
         return (
             <Grid className="App">
                 <Grid.Column width={2} />
@@ -11,14 +20,18 @@ class MainCard extends Component {
                     <Card fluid>
                         <Card.Header className="CardHeader">
                             <Grid>
-                                <Grid.Column width={8}>
-                                    <Header as="h2">Sua cidade: </Header>
+                                <Grid.Column width={6}>
+                                    <Header as="h2">Pesquisa por Cidade: </Header>
                                 </Grid.Column>
-                                <Grid.Column width={8}>
+                                <Grid.Column width={10}>
                                     <Search
                                         fluid
+                                        loading={searchLoading}
+                                        onResultSelect={onSearchSelect}
+                                        onSearchChange={onSearch}
+                                        results={searchResults}
+                                        value={searchValue}
                                         noResultsMessage="Sem Resultados"
-                                        {...this.props}
                                     />
                                 </Grid.Column>
                             </Grid>

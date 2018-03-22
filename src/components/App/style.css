@@ -1,19 +1,20 @@
-.App {
+.app {
   width: 100%;
 }
 
-.MainContainerCard {
-  margin-top: 50px;
-}
-
-.CardHeader {
+.cardHeader {
   margin: 20px;
 }
 
-.CardHeader h2 {
+.cardHeader h2 {
   color: #00A4AC !important;
 }
 
 .ui.icon.input {
   width: 100%;
+}
+
+.search {
+  margin-top: 15%;
+  margin-bottom: 5%;
 }

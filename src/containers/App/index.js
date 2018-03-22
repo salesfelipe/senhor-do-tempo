@@ -1,6 +1,6 @@
 import _ from 'lodash'
 import React, { Component } from 'react'
-import MainCard  from '../../components/MainCard'
+import App  from '../../components/App'
 import cities from '../../resources/br.city.list.json'
 
 class AppContainer extends Component {
@@ -13,7 +13,7 @@ class AppContainer extends Component {
     this.state = 
     {
       searchValue: '',
-      cities: cities
+      cities: cities.map(function(el){ el['key']= el.id; return el;})
     };
   }
 
@@ -21,15 +21,15 @@ class AppContainer extends Component {
     this.resetSearch();
   }
 
-  resetSearch = () => this.setState({ searchLoading: false, searchResults: [], searchValue: '', selectedCityId: '' })
+  resetSearch = () => this.setState({ searchLoading: false, searchResults: [], searchValue: '', selectedId: '' })
 
-  handleSearchSelect = (e, { result }) => this.setState({ searchValue: result.name, selectedCityId: result.id })
+  handleSearchSelect = (e, { result }) => this.setState({ searchValue: result.name, selectedId: result.id })
 
   handleSearchChange = (e, { value } ) => {
      this.setState({ searchLoading: true, searchValue: value })
 
     setTimeout(() => {
-      if (value < 3) return this.resetSearch()
+      if (this.state.searchValue < 2) return this.resetSearch()
 
       const re = new RegExp(_.escapeRegExp(this.state.searchValue), 'i')
       const isMatch = result => re.test(result.name)
@@ -45,7 +45,7 @@ class AppContainer extends Component {
     const { searchLoading, searchValue, searchResults } = this.state;
 
     return (
-      <MainCard 
+      <App 
         onSearch={this.handleSearchChange} 
         onSearchSelect={this.handleSearchSelect} 
         searchLoading={searchLoading}

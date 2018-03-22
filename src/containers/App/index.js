@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
-import _ from 'lodash';
-import MainCard  from '../../components/MainCard';
-import cities from '../../resources/city.list.json';
+import _ from 'lodash'
+import React, { Component } from 'react'
+import MainCard  from '../../components/MainCard'
+import cities from '../../resources/br.city.list.json'
 
 class AppContainer extends Component {
   constructor(props) {
@@ -12,40 +12,33 @@ class AppContainer extends Component {
     this.resetSearch = this.resetSearch.bind(this);
     this.state = 
     {
-      searchValue: ''
+      searchValue: '',
+      cities: cities
     };
-    console.log(cities);
   }
 
   componentWillMount() {
     this.resetSearch();
   }
 
-  resetSearch = () => this.setState({ searchLoading: false, searchResults: [], searchValue: 'asdas', selectedCityId: '' })
+  resetSearch = () => this.setState({ searchLoading: false, searchResults: [], searchValue: '', selectedCityId: '' })
 
   handleSearchSelect = (e, { result }) => this.setState({ searchValue: result.name, selectedCityId: result.id })
 
-  handleSearchChange = (e, { searchValue }) => {
-    this.setState({ searchLoading: true, searchValue })
-
-    console.log('value', searchValue);
-    let value = this.state.searchValue;
-
-    if(value === undefined)
-      value = '';
+  handleSearchChange = (e, { value } ) => {
+     this.setState({ searchLoading: true, searchValue: value })
 
     setTimeout(() => {
-      console.log(`state`,this.state);
-      if (value < 1) return this.resetSearch()
+      if (value < 3) return this.resetSearch()
 
-      const re = new RegExp(_.escapeRegExp(this.state.searchValue), 'i');
-      const isMatch = result => re.test(result.name + " " + result.country);
+      const re = new RegExp(_.escapeRegExp(this.state.searchValue), 'i')
+      const isMatch = result => re.test(result.name)
 
       this.setState({
         searchLoading: false,
-        searchResults: _.filter(cities, isMatch),
+        searchResults: _.filter(this.state.cities, isMatch),
       })
-    }, 300)
+    }, 300);
   }
 
   render() {

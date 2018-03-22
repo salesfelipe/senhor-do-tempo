@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
-import { Card, Grid, Search, Header, Divider } from 'semantic-ui-react';
+import { Card, Grid, Search, Header, Divider, Label } from 'semantic-ui-react';
 import './style.css';
 
 class MainCard extends Component {
+    resultRenderer = ({ name }) => <Label content={name} />
+
     render() {
         const 
         { 
@@ -32,6 +34,7 @@ class MainCard extends Component {
                                         results={searchResults}
                                         value={searchValue}
                                         noResultsMessage="Sem Resultados"
+                                        resultRenderer={this.resultRenderer}
                                     />
                                 </Grid.Column>
                             </Grid>

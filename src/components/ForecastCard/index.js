@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Segment, Card, Grid, Flag, Label, Statistic, Icon } from 'semantic-ui-react';
+import { GOOGLE_MAPS_KEY } from '../../utils/keys'
 
 const ForecastStats = ({ content, color, name }) => (
     <Statistic>
@@ -24,7 +25,7 @@ class ForecastCard extends Component {
                 <Card fluid>
                     { !loading &&
                     <iframe
-                        src={`https://www.google.com/maps/embed/v1/view?key=AIzaSyCJ0RZIuECTJqLMj5fpzSxFORLHQahDI5I&zoom=10&center=${forecast.coord.lat},${forecast.coord.lon}`}
+                        src={`https://www.google.com/maps/embed/v1/view?key=${GOOGLE_MAPS_KEY}&zoom=10&center=${forecast.coord.lat},${forecast.coord.lon}`}
                         width="inherit"
                         height="inherit"
                         frameBorder="0"

@@ -2,6 +2,7 @@ import _ from 'lodash'
 import React, { Component } from 'react'
 import App  from '../../components/App'
 import cities from '../../resources/br.city.list.json'
+import sample from '../../resources/api-call.sample.json'
 
 class AppContainer extends Component {
   constructor(props) {
@@ -12,8 +13,11 @@ class AppContainer extends Component {
     this.resetSearch = this.resetSearch.bind(this);
     this.state = 
     {
+      forecastData: sample, 
       searchValue: '',
-      cities: cities.map(function(el){ el['key']= el.id; return el;})
+      cities: cities.map(function(el){ el['key']= el.id; return el;}),
+      selected: null,
+      loading: false,
     };
   }
 
@@ -21,9 +25,9 @@ class AppContainer extends Component {
     this.resetSearch();
   }
 
-  resetSearch = () => this.setState({ searchLoading: false, searchResults: [], searchValue: '', selectedId: '' })
+  resetSearch = () => this.setState({ searchLoading: false, searchResults: [], searchValue: '', selected: null })
 
-  handleSearchSelect = (e, { result }) => this.setState({ searchValue: result.name, selectedId: result.id })
+  handleSearchSelect = (e, { result }) => this.setState({ searchValue: result.name, selected: result })
 
   handleSearchChange = (e, { value } ) => {
      this.setState({ searchLoading: true, searchValue: value })
@@ -42,7 +46,7 @@ class AppContainer extends Component {
   }
 
   render() {
-    const { searchLoading, searchValue, searchResults } = this.state;
+    const { searchLoading, searchValue, searchResults, selected, forecastData, loading } = this.state;
 
     return (
       <App 
@@ -51,6 +55,9 @@ class AppContainer extends Component {
         searchLoading={searchLoading}
         searchValue={searchValue}
         searchResults={searchResults}
+        city={selected}
+        data={forecastData}
+        loading={loading}
       />
     );
   }

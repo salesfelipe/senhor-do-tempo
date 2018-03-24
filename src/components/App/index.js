@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Card, Grid, Search, Label } from 'semantic-ui-react';
+import { Grid, Search, Label, Transition } from 'semantic-ui-react';
 import ForecastCard  from '../ForecastCard'
 
 import './style.css';
@@ -14,8 +14,13 @@ class App extends Component {
                 onSearchSelect,
                 searchLoading,
                 searchValue,
-                searchResults
+                searchResults,
+                city,
+                data,
+                loading
             } = this.props;
+
+        let visible = city != null;
 
         return (
             <Grid className="app">
@@ -32,7 +37,11 @@ class App extends Component {
                         noResultsMessage="Sem Resultados"
                         resultRenderer={this.resultRenderer}
                     />
-                    <ForecastCard />
+                    <Transition visible={visible} animation='slide up' duration={500}>
+                        <div>
+                            {city && <ForecastCard city={city} forecast={data} loading={loading}/>}
+                        </div>
+                    </Transition>
                 </Grid.Column>
                 <Grid.Column width={2} />
             </Grid>

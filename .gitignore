@@ -9,6 +9,11 @@ node_modules/
 
 build/
 
+# Tests
+config/
+scripts/
+
+
 # Keys
 
 src/utils/keys.js

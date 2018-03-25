@@ -1,11 +1,28 @@
 import React, { Component } from 'react';
 import { Grid, Search, Label, Transition } from 'semantic-ui-react';
+import { fromKelvin2Celsius, translateWeather } from '../../utils/functions';
 import ForecastCard  from '../ForecastCard'
 
 import './style.css';
 
 class App extends Component {
     resultRenderer = ({ name }) => <Label content={name} />
+
+    mapForecastInput(forecast) {
+
+        if(forecast == null)
+            return null;
+
+        return {
+            coord: forecast.coord,
+            weather: translateWeather(forecast.weather[0].description),
+            stats: {
+                tempMin: fromKelvin2Celsius(forecast.main.temp_min),
+                tempMax: fromKelvin2Celsius(forecast.main.temp_max),
+                humidity: forecast.main.humidity + " %"
+            }
+        };
+    }
 
     render() {
         const
@@ -20,7 +37,9 @@ class App extends Component {
                 loading
             } = this.props;
 
-        let visible = city != null;
+        const forecast = this.mapForecastInput(data);
+
+        const visible = (city != null) && (forecast != null);
 
         return (
             <Grid className="app">
@@ -39,7 +58,7 @@ class App extends Component {
                     />
                     <Transition visible={visible} animation='slide up' duration={500}>
                         <div>
-                            {city && <ForecastCard city={city} forecast={data} loading={loading}/>}
+                            {city && forecast && <ForecastCard city={city} forecast={forecast} loading={loading}/>}
                         </div>
                     </Transition>
                 </Grid.Column>

@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { Grid, Search, Label, Transition, Flag } from 'semantic-ui-react';
 import { fromKelvin2Celsius, translateWeather } from '../../utils/functions';
-import ForecastCard from '../ForecastCard'
+import ForecastCard from '../ForecastCard';
 
 import './style.css';
 
@@ -77,5 +78,46 @@ class App extends Component {
         );
     }
 }
+
+const coordPropType = PropTypes.shape({
+    lon: PropTypes.number,
+    lat: PropTypes.number
+});
+
+App.propTypes = {
+    resultRenderer: PropTypes.func,
+    mapForecastInput: PropTypes.func,
+    onSearch: PropTypes.func,
+    onSearchSelect: PropTypes.func,
+    searchLoading: PropTypes.bool,
+    searchValue: PropTypes.string,
+    searchResults: PropTypes.array,
+    
+    city: PropTypes.shape({
+        id: PropTypes.number,
+        name: PropTypes.string,
+        country: PropTypes.string,
+        coord: coordPropType
+    }),
+
+    data: PropTypes.shape({
+        coord: coordPropType,
+    
+        weather: PropTypes.arrayOf(PropTypes.shape({
+            id: PropTypes.number,
+            description: PropTypes.string,
+            icon: PropTypes.string
+        })),
+    
+        main: PropTypes.shape({
+            temp: PropTypes.number,
+            humidity: PropTypes.number,
+            temp_max: PropTypes.number,
+            temp_min: PropTypes.number
+        })
+    }),
+
+    loading: PropTypes.bool
+};
 
 export default App;

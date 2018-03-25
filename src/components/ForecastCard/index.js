@@ -1,6 +1,7 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { Segment, Card, Image, Label, Statistic, Grid } from 'semantic-ui-react';
-import { GOOGLE_MAPS_KEY } from '../../utils/keys'
+import { GOOGLE_MAPS_KEY } from '../../utils/keys';
 import './style.css';
 
 const ForecastStats = ({ content, color, name, icon }) => (
@@ -72,6 +73,24 @@ class ForecastCard extends Component {
             </Segment>
         );
     }
+}
+ForecastCard.propTypes = {
+    forecast: PropTypes.shape({
+        coord: PropTypes.shape({
+            lon: PropTypes.number,
+            lat: PropTypes.number
+        }),
+        weather: PropTypes.shape({
+            icon: PropTypes.string,
+            description: PropTypes.string
+        }),
+        stats: PropTypes.shape({
+            tempMax: PropTypes.string,
+            tempMin: PropTypes.string,
+            humidity: PropTypes.string
+        })
+    }),
+    loading: PropTypes.bool
 }
 
 export default ForecastCard;

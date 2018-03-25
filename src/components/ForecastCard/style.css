@@ -1,3 +1,7 @@
 .labelFont {
     font-size: 33% !important;
 }
+
+.ui.statistic {
+    max-width: none;
+}

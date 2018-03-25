@@ -37,29 +37,29 @@ class ForecastCard extends Component {
                     }
                     <Card.Content>
                         <Segment>
-                            <Grid columns="4">
-                                <Grid.Column>
+                            <Grid>
+                                <Grid.Column width="7">
                                     <ForecastStats
                                         content={forecast.weather.description}
                                         color='grey'
                                         icon={forecast.weather.icon}
                                     />
                                 </Grid.Column>
-                                <Grid.Column>
+                                <Grid.Column width="3">
                                     <ForecastStats
                                         content={forecast.stats.humidity}
                                         color='blue'
                                         name='Umidade'
                                     />
                                 </Grid.Column>
-                                <Grid.Column>
+                                <Grid.Column width="3">
                                     <ForecastStats
                                         content={forecast.stats.tempMin}
                                         color='orange'
                                         name='Temp. Mínima'
                                     />
                                 </Grid.Column>
-                                <Grid.Column>
+                                <Grid.Column width="3">
                                     <ForecastStats
                                         content={forecast.stats.tempMax}
                                         color='red'

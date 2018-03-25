@@ -31,7 +31,7 @@ class AppContainer extends Component {
 
   handleSearchSelect = (e, { result }) => { 
     this.setState({ loading: true, selected: result, searchValue: result.name }); 
-    fetch(`http://api.openweathermap.org/data/2.5/weather?id=${result.id}&APPID=${OPEN_WEATHER_KEY}`)
+    fetch(`https://api.openweathermap.org/data/2.5/weather?id=${result.id}&APPID=${OPEN_WEATHER_KEY}`)
     .then(results => {
       return results.json();
     }).then( data => { 

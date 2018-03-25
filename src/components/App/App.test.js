@@ -14,7 +14,7 @@ it('convert sample api call', () => {
   const appComponent = new App();
 
   const converted = appComponent.mapForecastInput(sample);
-  const expected = {"coord": {"lat": -16.92, "lon": 145.77}, "stats": {"humidity": "74 %", "tempMax": "27 °C", "tempMin": "27 °C"}, "weather": {"description": "Nuvens esparsas", "icon": "http://openweathermap.org/img/w/03n.png"}};
+  const expected = {"coord": {"lat": -16.92, "lon": 145.77}, "stats": {"humidity": "74 %", "tempMax": "27 °C", "tempMin": "27 °C"}, "weather": {"description": "Nuvens esparsas", "icon": "https://openweathermap.org/img/w/03n.png"}};
 
   expect(converted.stats.humidity).toBe(expected.stats.humidity);
 

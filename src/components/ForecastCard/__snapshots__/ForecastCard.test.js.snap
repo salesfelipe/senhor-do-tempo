@@ -1,0 +1,406 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div
+  className="ui segment"
+>
+  <div
+    className="ui fluid card"
+    href={undefined}
+    onClick={[Function]}
+  >
+    <iframe
+      allowFullScreen={true}
+      frameBorder="0"
+      height="inherit"
+      src="https://www.google.com/maps/embed/v1/view?key=AIzaSyCJ0RZIuECTJqLMj5fpzSxFORLHQahDI5I&zoom=10&center=undefined,undefined"
+      title="city-map"
+      width="inherit"
+    />
+    <div
+      className="content"
+    >
+      <div
+        className="ui segment"
+      >
+        <div
+          className="ui grid"
+        >
+          <div
+            className="seven wide column"
+          >
+            <div
+              className="ui statistic"
+            >
+              <div
+                className="value"
+              >
+                <div
+                  className="ui grey image label labelFont"
+                  onClick={[Function]}
+                >
+                  <img
+                    className="ui image"
+                    src={undefined}
+                  />
+                </div>
+              </div>
+              <div
+                className="label"
+              />
+            </div>
+          </div>
+          <div
+            className="three wide column"
+          >
+            <div
+              className="ui statistic"
+            >
+              <div
+                className="value"
+              >
+                <div
+                  className="ui blue image label labelFont"
+                  onClick={[Function]}
+                >
+                  <img
+                    className="ui image"
+                    src={undefined}
+                  />
+                </div>
+              </div>
+              <div
+                className="label"
+              >
+                Umidade
+              </div>
+            </div>
+          </div>
+          <div
+            className="three wide column"
+          >
+            <div
+              className="ui statistic"
+            >
+              <div
+                className="value"
+              >
+                <div
+                  className="ui orange image label labelFont"
+                  onClick={[Function]}
+                >
+                  <img
+                    className="ui image"
+                    src={undefined}
+                  />
+                </div>
+              </div>
+              <div
+                className="label"
+              >
+                Temp. Mínima
+              </div>
+            </div>
+          </div>
+          <div
+            className="three wide column"
+          >
+            <div
+              className="ui statistic"
+            >
+              <div
+                className="value"
+              >
+                <div
+                  className="ui red image label labelFont"
+                  onClick={[Function]}
+                >
+                  <img
+                    className="ui image"
+                    src={undefined}
+                  />
+                </div>
+              </div>
+              <div
+                className="label"
+              >
+                Temp. Máxima
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renders correctly: loading false 1`] = `
+<div
+  className="ui segment"
+>
+  <div
+    className="ui fluid card"
+    href={undefined}
+    onClick={[Function]}
+  >
+    <iframe
+      allowFullScreen={true}
+      frameBorder="0"
+      height="inherit"
+      src="https://www.google.com/maps/embed/v1/view?key=AIzaSyCJ0RZIuECTJqLMj5fpzSxFORLHQahDI5I&zoom=10&center=undefined,undefined"
+      title="city-map"
+      width="inherit"
+    />
+    <div
+      className="content"
+    >
+      <div
+        className="ui segment"
+      >
+        <div
+          className="ui grid"
+        >
+          <div
+            className="seven wide column"
+          >
+            <div
+              className="ui statistic"
+            >
+              <div
+                className="value"
+              >
+                <div
+                  className="ui grey image label labelFont"
+                  onClick={[Function]}
+                >
+                  <img
+                    className="ui image"
+                    src={undefined}
+                  />
+                </div>
+              </div>
+              <div
+                className="label"
+              />
+            </div>
+          </div>
+          <div
+            className="three wide column"
+          >
+            <div
+              className="ui statistic"
+            >
+              <div
+                className="value"
+              >
+                <div
+                  className="ui blue image label labelFont"
+                  onClick={[Function]}
+                >
+                  <img
+                    className="ui image"
+                    src={undefined}
+                  />
+                </div>
+              </div>
+              <div
+                className="label"
+              >
+                Umidade
+              </div>
+            </div>
+          </div>
+          <div
+            className="three wide column"
+          >
+            <div
+              className="ui statistic"
+            >
+              <div
+                className="value"
+              >
+                <div
+                  className="ui orange image label labelFont"
+                  onClick={[Function]}
+                >
+                  <img
+                    className="ui image"
+                    src={undefined}
+                  />
+                </div>
+              </div>
+              <div
+                className="label"
+              >
+                Temp. Mínima
+              </div>
+            </div>
+          </div>
+          <div
+            className="three wide column"
+          >
+            <div
+              className="ui statistic"
+            >
+              <div
+                className="value"
+              >
+                <div
+                  className="ui red image label labelFont"
+                  onClick={[Function]}
+                >
+                  <img
+                    className="ui image"
+                    src={undefined}
+                  />
+                </div>
+              </div>
+              <div
+                className="label"
+              >
+                Temp. Máxima
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renders correctly: loading true 1`] = `
+<div
+  className="ui segment"
+>
+  <div
+    className="ui fluid card"
+    href={undefined}
+    onClick={[Function]}
+  >
+    <iframe
+      allowFullScreen={true}
+      frameBorder="0"
+      height="inherit"
+      src="https://www.google.com/maps/embed/v1/view?key=AIzaSyCJ0RZIuECTJqLMj5fpzSxFORLHQahDI5I&zoom=10&center=undefined,undefined"
+      title="city-map"
+      width="inherit"
+    />
+    <div
+      className="content"
+    >
+      <div
+        className="ui segment"
+      >
+        <div
+          className="ui grid"
+        >
+          <div
+            className="seven wide column"
+          >
+            <div
+              className="ui statistic"
+            >
+              <div
+                className="value"
+              >
+                <div
+                  className="ui grey image label labelFont"
+                  onClick={[Function]}
+                >
+                  <img
+                    className="ui image"
+                    src={undefined}
+                  />
+                </div>
+              </div>
+              <div
+                className="label"
+              />
+            </div>
+          </div>
+          <div
+            className="three wide column"
+          >
+            <div
+              className="ui statistic"
+            >
+              <div
+                className="value"
+              >
+                <div
+                  className="ui blue image label labelFont"
+                  onClick={[Function]}
+                >
+                  <img
+                    className="ui image"
+                    src={undefined}
+                  />
+                </div>
+              </div>
+              <div
+                className="label"
+              >
+                Umidade
+              </div>
+            </div>
+          </div>
+          <div
+            className="three wide column"
+          >
+            <div
+              className="ui statistic"
+            >
+              <div
+                className="value"
+              >
+                <div
+                  className="ui orange image label labelFont"
+                  onClick={[Function]}
+                >
+                  <img
+                    className="ui image"
+                    src={undefined}
+                  />
+                </div>
+              </div>
+              <div
+                className="label"
+              >
+                Temp. Mínima
+              </div>
+            </div>
+          </div>
+          <div
+            className="three wide column"
+          >
+            <div
+              className="ui statistic"
+            >
+              <div
+                className="value"
+              >
+                <div
+                  className="ui red image label labelFont"
+                  onClick={[Function]}
+                >
+                  <img
+                    className="ui image"
+                    src={undefined}
+                  />
+                </div>
+              </div>
+              <div
+                className="label"
+              >
+                Temp. Máxima
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

@@ -1,11 +1,13 @@
 import React, { Component } from 'react'
-import { Segment, Card, Flag, Label, Statistic, Grid } from 'semantic-ui-react';
+import { Segment, Card, Image, Label, Statistic, Grid } from 'semantic-ui-react';
 import { GOOGLE_MAPS_KEY } from '../../utils/keys'
+import './style.css';
 
-const ForecastStats = ({ content, color, name }) => (
+const ForecastStats = ({ content, color, name, icon }) => (
     <Statistic>
         <Statistic.Value>
-            <Label color={color}>
+            <Label color={color} image className="labelFont">
+                <Image src={icon} />
                 {content}
             </Label>
         </Statistic.Value>
@@ -18,7 +20,7 @@ const ForecastStats = ({ content, color, name }) => (
 
 class ForecastCard extends Component {
     render() {
-        const { city, forecast, loading } = this.props;
+        const { forecast, loading } = this.props;
 
         return (
             <Segment loading={loading}>
@@ -34,16 +36,12 @@ class ForecastCard extends Component {
                     }
                     <Card.Content>
                         <Segment>
-                            <Label attached='top left'>
-                                <Flag name='brazil' />
-                                {city.name}
-                            </Label>
                             <Grid columns="4">
                                 <Grid.Column>
                                     <ForecastStats
-                                        content={forecast.weather}
+                                        content={forecast.weather.description}
                                         color='grey'
-                                        name='Céu'
+                                        icon={forecast.weather.icon}
                                     />
                                 </Grid.Column>
                                 <Grid.Column>

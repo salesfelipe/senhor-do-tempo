@@ -3,6 +3,7 @@ import React, { Component } from 'react'
 import App  from '../../components/App'
 import cities from '../../resources/br.city.list.json'
 import sample from '../../resources/api-call.sample.json'
+import { OPEN_WEATHER_KEY } from '../../utils/keys';
 
 class AppContainer extends Component {
   constructor(props) {
@@ -27,7 +28,18 @@ class AppContainer extends Component {
 
   resetSearch = () => this.setState({ searchLoading: false, searchResults: [], searchValue: '', selected: null })
 
-  handleSearchSelect = (e, { result }) => this.setState({ searchValue: result.name, selected: result })
+  handleSearchSelect = (e, { result }) => { 
+    this.setState({ loading: true, selected: result, searchValue: result.name }); 
+    fetch(`http://api.openweathermap.org/data/2.5/weather?id=${result.id}&APPID=${OPEN_WEATHER_KEY}`)
+    .then(results => {
+      return results.json();
+    }).then( data => { 
+      if(data.cod === 200)
+        this.setState({ loading: false, forecastData: data });
+      else
+        this.setState({ loading: false });
+    });
+  }
 
   handleSearchChange = (e, { value } ) => {
      this.setState({ searchLoading: true, searchValue: value })

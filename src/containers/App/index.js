@@ -16,6 +16,7 @@ class AppContainer extends Component {
     {
       forecastData: sample, 
       searchValue: '',
+      searchLoading: false,
       cities: cities.map(function(el){ el['key']= el.id; return el;}),
       selected: null,
       loading: false,

@@ -8,7 +8,3 @@ node_modules/
 # Build
 
 build/
-
-# Keys
-
-src/utils/keys.js
